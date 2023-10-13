@@ -1,0 +1,1 @@
+INSERT INTO `usuarios` (`coduser`, `nome`, `email`, `senha`) VALUES (NULL, 'Gabriel', 'gabriel@gmail.com', '123');
