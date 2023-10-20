@@ -1,6 +1,6 @@
 <?php
-require_once('./conectar.php');
-require_once('./verificar_sessao.php');
+require_once('../php/conectar.php');
+require_once('../php/verificar_sessao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -39,7 +39,7 @@ require_once('./verificar_sessao.php');
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                <li class="nav-item"><a class="nav-link active" aria-current="page" href="../html/principal.php">Início</a></li>
-               <li class="nav-item"><a class="nav-link" href="../php/form_cadastrar.php">Cadastrar</a></li>
+               <li class="nav-item"><a class="nav-link" href="../html/form_cadastrar.php">Cadastrar</a></li>
                <li class="nav-item"><a class="nav-link" href="#!">Consultar</a></li>
                <li class="nav-item"><a class="nav-link" href="#!">Relatório</a></li>
 			   <li class="nav-item"><a class="nav-link" href="../php/logout.php">Sair</a></li>
@@ -122,24 +122,16 @@ require_once('./verificar_sessao.php');
 </div>
       
 <?php
-if (isset ($_GET['retorno']))
-{
- /*$msg = $_GET['retorno'];
- echo "<br />";
- echo "<font size='5' color='#F00'>";
- echo $msg;
- $msg="";
- echo "</font>"; */
- echo '<script type="text/javascript"> alert("Objeto Cadastrado com Sucesso!!!"); </script>';
+if (isset($_GET) && !empty($_GET["retorno"])) {
+  $retorno = $_GET["retorno"];
+  echo "<script>alert('$retorno')</<script>";
 }
 ?>
      <!-- Footer-->
-        <footer class="py-5 bg-success gap-3">
-            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright: @Gabriel, @Fernando and @Victor</p></div>
-        </footer>
+     <footer class="card text-white bg-secondary my-5 py-4 text-center bg-success">
+  <div class="card-body"><p class="text-white m-0">Copyright: @Gabriel, @Fernando and @Victor</p></div>
+</footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="../js/scripts.js"></script>
     </body>
 </html>

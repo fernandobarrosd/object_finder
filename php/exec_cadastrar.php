@@ -34,5 +34,5 @@ move_uploaded_file($foto,$arquivo);
 //voltar para principal.php e passsar parâmetro por GET com mensagem de: 
 // Cliente cadastrado com sucesso !
 $msg= urlencode('Objeto cadastrado com sucesso !');
-header("location: ../php/form_cadastrar.php?retorno=$msg");
+header("location: ../html/form_cadastrar.php?retorno=$msg");
 ?>   

@@ -6,19 +6,10 @@
    <link rel="stylesheet" type="text/css" href="../css/style_login.css">
    <title>Objects Finder</title>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
    <link rel="shortcut icon" href="../img/Logo-Object-Finder - Favicon.ico" type="image/x-icon">
 </head>
-<body>
-   <div class="modal-wrapper">
-      <div class="modal-container">
-         <div class="modal-content">
-            <p class="modal-message"></p>
-         </div>
-         <div class="modal-buttons">
-            <button id="cancel-button">Cancelar</button>
-         </div>
-      </div>
-    </div>   
+<body> 
    <div class="container">
       <header>
          <img class="logo" id="logo" src=" ../img/logotcc.png">
@@ -42,20 +33,28 @@
             </form>
          </section>
       </main>
-     
+     <div class="modal modal-dialog-centered invisible">
+      <div class="modal-dialog bg-white">
+         <div class="modal-header">
+            <h5 class="modal-title">Error</h5>
+         </div>
+         <div class="modal-body">
+            <p></p>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+         </div>
+
+      </div>
+     </div>
     </div>
-	<?php
-//se falhar a validacao do login na pagina validar_login.php, volta para essa
-//pagina login.php e mostra uma mensagem de erro ("nome ou senha invalidos")
-if (isset($_GET['retorno']) && !empty($_GET['retorno'])) 
- { 
-	echo '<br />';
-	echo '<font color="red">';
-	echo $_GET['retorno'];
-	echo '</font>';
- }
-?>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
+
+<!--se falhar a validacao do login na pagina validar_login.php, volta para essa
+pagina login.php e mostra uma mensagem de erro ("nome ou senha invalidos")-->
+<script src='../js/script-login.js'></script>
 
 </body> 
-      <script type="module" src="../js/script.js"></script>
+
 </html>

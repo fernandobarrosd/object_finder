@@ -20,7 +20,7 @@
         <meta name="author" content="" />
         <title>Object Finder</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../img/Logo-Object-Finder - Favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/styles.css" rel="stylesheet" />
     </head>
@@ -33,10 +33,29 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Início</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php/form_cadastrar.php">Cadastrar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/form_cadastrar.php">Cadastrar</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Consultar</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Relatório</a></li>
-						<li class="nav-item"><a class="nav-link" href="../php/logout.php">Sair</a></li>
+                        <?php
+                        $linkText = "";
+                        $href = "";
+                        session_start();
+
+                        if ($_SESSION["login"] != "ok") {
+                            $linkText = "Entrar";
+                            $href = "../html/login.php";
+                        }
+                        else {
+                            $linkText = "Sair";
+                            $href = "../php/logout.php";
+                        }
+                        echo "<li class='nav-item'>
+                            <a class='nav-link' href='$href'>$linkText</a>
+                        </li>";
+                        ?>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../html/painel-admin.php">Admin</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -92,6 +111,5 @@ while ($linha = mysqli_fetch_assoc($res))
  <!-- Bootstrap core JS-->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
  <!-- Core theme JS-->
- <script src="js/scripts.js"></script>
 </body>
 </html>

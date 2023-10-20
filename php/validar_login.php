@@ -16,11 +16,11 @@ if ($num > 0)
 		//As duas linhas abaixo colocam o codigo do usuario na posição coduser do vetor $_SESSION
 		$linha = mysqli_fetch_row($res);
         $_SESSION['coduser'] = $linha[0];
-		header("location: ../php/form_cadastrar.php");
+		header("location: ../html/form_cadastrar.php");
 } 
 else 
 {
 		$msg = urlencode('Dados invalidos!');
-		header("location: ./login.php?retorno=$msg");
+		header("location: ../html/login.php?retorno=$msg");
 }
 ?>
